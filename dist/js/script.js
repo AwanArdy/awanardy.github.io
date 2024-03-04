@@ -92,11 +92,9 @@ function sendMail() {
   emailjs.sendForm("service_96crtzn", "template_fts8pc5", "#sendMessage").then(
     (response) => {
       console.log("SUCCESS!", response.status, response.text);
-      alert("Pesan terkirim!");
     },
     (error) => {
       console.log("FAILED...", error);
-      alert("Pesan tidak terkirim!");
     }
   );
 }
