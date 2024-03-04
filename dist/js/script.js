@@ -1,3 +1,5 @@
+const { response } = require("express");
+
 // Navbar Fixed
 window.onscroll = function () {
   const header = document.querySelector("header");
@@ -59,5 +61,14 @@ if (
 
 // mengirim email
 const sendEmail = () => {
-  EmailJSResponseStatus.sendform("service_96crtzn");
+  emailjs.sendform("service_96crtzn", "template_s6k4uyd", "#sendMessage").then(
+    (response) => {
+      console.log("SUCCESS!", response.status, response.text);
+      alert("Pesan terkirim!");
+    },
+    (error) => {
+      console.log("FAILED...", error);
+      alert("Pesan tidak terkirim!");
+    }
+  );
 };
