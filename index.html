@@ -20,27 +20,6 @@
         gtag('config', 'G-E9VG9DKSR2');
     </script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-
-        document.addEventListener('DOMContentLoaded', (event) => {
-            document.addEventListener('contextmenu', function (e) {
-                if (e.target.nodeName === 'IMG') {
-                    e.preventDefault();
-                }
-            }, false);
-        });
-
-        (function () {
-            emailjs.init({
-                publicKey: "sFe0hKh4R5aEoM3O0",
-            })
-        })
-    </script>
 </head>
 
 <body>

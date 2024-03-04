@@ -1,4 +1,9 @@
-const { response } = require("express");
+// Memanggil emailjs
+(function () {
+  emailjs.init({
+    publicKey: "sFe0hKh4R5aEoM3O0",
+  });
+})();
 
 // Navbar Fixed
 window.onscroll = function () {
@@ -58,6 +63,29 @@ if (
 } else {
   darkToggle.checked = false;
 }
+
+// Dark mode menyesuaikan sistem bawaan
+if (
+  localStorage.theme === "dark" ||
+  (!("theme" in localStorage) &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches)
+) {
+  document.documentElement.classList.add("dark");
+} else {
+  document.documentElement.classList.remove("dark");
+}
+
+document.addEventListener("DOMContentLoaded", (event) => {
+  document.addEventListener(
+    "contextmenu",
+    function (e) {
+      if (e.target.nodeName === "IMG") {
+        e.preventDefault();
+      }
+    },
+    false
+  );
+});
 
 // mengirim email
 const sendEmail = () => {
