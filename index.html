@@ -11,7 +11,16 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="dist/output.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E9VG9DKSR2"></script>
     <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-E9VG9DKSR2');
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
         } else {
@@ -25,6 +34,12 @@
                 }
             }, false);
         });
+
+        (function () {
+            emailjs.init({
+                publicKey: "sFe0hKh4R5aEoM3O0",
+            })
+        })
     </script>
 </head>
 
@@ -429,7 +444,7 @@
                 </div>
             </div>
 
-            <form id="contactForm">
+            <form onsubmit="sendEmail(); return false;">
                 <div class="w-full lg:mx-auto lg:w-2/3">
                     <div class="mb-8 w-full px-4">
                         <label for="name" class="text-base font-bold text-primary">Nama</label>

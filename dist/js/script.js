@@ -57,30 +57,7 @@ if (
   darkToggle.checked = false;
 }
 
-// menangkap pengiriman formulir dan mengirimnya
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault(); // Menghentikan pengiriman formulir default
-
-  const formData = {
-    name: document.getElementById("name").value,
-    email: document.getElementById("email").value,
-    message: document.getElementById("message").value,
-  };
-
-  fetch("/submit-form", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
-  })
-    .then((response) => response.text())
-    .then((data) => {
-      console.log(data);
-      alert("Pesan berhasil dikirim");
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-      alert("Terjadi kesalahan saat mengirim pesan");
-    });
-});
+// mengirim email
+const sendEmail = () => {
+  EmailJSResponseStatus.sendform("service_96crtzn");
+};
