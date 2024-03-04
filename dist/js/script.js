@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 });
 
 // mengirim email
-emailjs.sendform("service_96crtzn", "template_s6k4uyd", "#sendMessage").then(
+emailjs.sendForm("service_96crtzn", "template_s6k4uyd", "#sendMessage").then(
   (response) => {
     console.log("SUCCESS!", response.status, response.text);
     alert("Pesan terkirim!");
