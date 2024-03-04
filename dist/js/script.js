@@ -1,9 +1,9 @@
 // Memanggil emailjs
-(function () {
-  emailjs.init({
-    publicKey: "sFe0hKh4R5aEoM3O0",
-  });
-})();
+// (function () {
+//   emailjs.init({
+//     publicKey: "sFe0hKh4R5aEoM3O0",
+//   });
+// })();
 
 // Navbar Fixed
 window.onscroll = function () {
