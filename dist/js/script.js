@@ -5,6 +5,47 @@
 //   });
 // })();
 
+// Generate Nama
+let alpabeth = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let flag = 0;
+let name = "Awan Ardy";
+let result = "";
+let i = 0;
+
+function randomizeLetter(letter) {
+  if (letter === " ") return " ";
+  let letterIndex = alpabeth.indexOf(letter.toUpperCase());
+  let randomLetterIndex = Math.floor(Math.random() * alpabeth.length);
+  while (randomLetterIndex === letterIndex) {
+    randomLetterIndex = Math.floor(Math.random() * alpabeth.length);
+  }
+  return alpabeth[randomLetterIndex];
+}
+
+function generateRandomName(name) {
+  let randomResult = "";
+  for (let i = 0; i < name.length; i++) {
+    randomResult += randomizeLetter(name[i]);
+  }
+  return randomResult;
+}
+
+function showRandomEffect(name, iteration, element) {
+  if (flag < iteration) {
+    result = generateRandomName(name);
+    element.textContent = result;
+    flag++;
+    setTimeout(() => showRandomEffect(name, iteration, element), 200);
+  } else {
+    element.textContent = name;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const nameElement = document.querySelector(".name");
+  showRandomEffect(name, 10, nameElement);
+});
+
 // Navbar Fixed
 window.onscroll = function () {
   const header = document.querySelector("header");
